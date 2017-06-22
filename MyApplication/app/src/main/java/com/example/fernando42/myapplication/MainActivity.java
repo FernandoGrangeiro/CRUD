@@ -1,5 +1,6 @@
 package com.example.fernando42.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
          titulo = (EditText)findViewById(R.id.editText);
          autor = (EditText)findViewById((R.id.editText2));
-         editora = (EditText)findViewById(R.id.editText3);
+         editora = (EditText)findViewById(R.id.editText6);
 
        botao =(Button) findViewById(R.id.button);
 
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
                 String resultado;
                 resultado=crud.insereDado(tituloString,autorString,editoraString);
                 Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+                Intent intent= new Intent(MainActivity.this,Consultar.class);
+                startActivity(intent);
+
 
             }
         });
